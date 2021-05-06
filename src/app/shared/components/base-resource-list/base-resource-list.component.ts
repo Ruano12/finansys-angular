@@ -8,12 +8,15 @@ export abstract class BaseResourceListComponent<T extends BaseResourceModel> imp
 
   constructor(protected resourceService: BaseResourceService<T>) { }
 
-  ngOnInit() {
-    this.resourceService.getAll().subscribe(resource => {
-      this.resources = resource.sort((a,b) => b.id - a.id)
+  ngOnInit() {    
+    this.resourceService.getAll().subscribe(resources => {
+      console.log(resources)
+      this.resources = resources.sort((a,b) => b.id - a.id)
       error => alert('Erro ao carregar lista')
     })
   }
+
+
 
   deleteResource(resource: T){
     const mustDelete = confirm('Deseja realmente excluir esse item?');

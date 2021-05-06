@@ -2,16 +2,12 @@
   [items]="[{text: 'Lançamentos'}]"
 ></app-bread-crumb>
 
-<div class="row mb-4">
-  <div class="col-md">
-    <h1 class="h2 border-left pl-2">Lançamentos</h1>
-  </div>
-  <div class="col-md">
-    <a [routerLink]="['new']" routerLinkActive="router-link-active"  class="btn btn-success float-right">
-      + Novo Lançamento
-    </a>
-  </div>
-</div>
+<app-page-header
+  [page-title]="'Lançamentos'"
+  [button-class]="'btn-success float-right'"
+  [button-text]="'+ Novo Lançamento'"
+  [button-link]="'new'"
+></app-page-header>
 
 <table class="table table-hover">
   <thead>
@@ -22,6 +18,7 @@
       <th class=text-center>Ações</th>
     </tr>
   </thead>
+
   <tbody>
     <tr *ngFor="let resource of resources">
       <td>
@@ -36,7 +33,8 @@
         </strong>
         <br>
         <span class="badge badge-light">{{resource.paidText}}</span>
-      </td>        
+      </td>    
+          
       <td class="text-center">
         <a [routerLink]="[resource.id, 'edit']" routerLinkActive="router-link-active"  class="btn btn-outline-info btn-sm mr-2">Editar</a>
         <button (click)=deleteResource(resource) class="btn btn-outline-danger btn-sm">Excluir</button>

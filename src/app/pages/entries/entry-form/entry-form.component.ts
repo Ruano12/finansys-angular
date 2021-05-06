@@ -6,7 +6,7 @@ import { Entry } from '../shared/entry.model';
 
 import { Category } from '../../categories/shared/category.model';
 import { CategoryService } from '../../categories/shared/category.service';
-import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource--form/base-resource-form.component';
+import { BaseResourceFormComponent } from 'src/app/shared/components/base-resource-form/base-resource-form.component';
 
 
 @Component({

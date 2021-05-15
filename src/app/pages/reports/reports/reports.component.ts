@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { tick } from '@angular/core/src/render3';
 
 import { Category } from "../../categories/shared/category.model";
 import { CategoryService } from "../../categories/shared/category.service";
@@ -39,8 +38,8 @@ export class ReportsComponent implements OnInit {
   categories: Category[] = [];
   entries: Entry[] = [];
 
-  @ViewChild('month') month: ElementRef = null
-  @ViewChild('year') year: ElementRef = null;
+  @ViewChild('month', { static: true }) month: ElementRef = null
+  @ViewChild('year', { static: true }) year: ElementRef = null;
 
   constructor(private entryService: EntryService, private categoryService: CategoryService) { }
 
